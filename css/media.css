@@ -1,0 +1,143 @@
+@media (max-width: 992px) {
+  /* Center text content */
+  .nav-link.a {
+    margin-left: 0 !important;
+  }
+  .nav-link.b {
+    border-bottom: 2px solid grey;
+  }
+  .nav-icons-left {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 5px !important;
+    margin-bottom: 20px;
+  }
+  .nav-icons-left-text {
+    display: flex;
+    /* Remove default p margin */
+  }
+
+  /* Or be more specific */
+  a .nav-icons-left-text {
+    text-decoration: none;
+  }
+  .nav-icons {
+    flex-direction: column;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+  .nav-icons-right {
+    width: 100% !important;
+  }
+
+  .btn-lime {
+    width: 100%;
+
+    flex-direction: column;
+  }
+
+  .hero-section .col-lg-6 {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  .hero-section .col-lg-6 .d-flex {
+    justify-content: center;
+  }
+  /* Make description full width */
+  .hero-desc {
+    max-width: 100%;
+  }
+
+  /* Center the image container */
+  .hero-img-d {
+    display: flex;
+    justify-content: center;
+  }
+  .hero-background-img {
+    height: 125vh;
+  }
+  .hero-background-img img {
+    height: 100%;
+  }
+  .carousel-item .row > div:nth-child(3) {
+    display: none !important;
+  }
+
+  .left-column {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .right-column {
+    width: 100%;
+    height: 100%;
+  }
+  .last-footer {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Adjust badge position for mobile */
+}
+@media (max-width: 768px) {
+  h1 {
+    line-height: 56px;
+    font-size: 45px;
+  }
+  h2 {
+    line-height: 38px;
+    font-size: 34px;
+  }
+  .game-card {
+    height: 250px;
+  }
+  .carousel-controls {
+    flex-wrap: wrap;
+  }
+  .carousel-item .row > div:nth-child(2),
+  .carousel-item .row > div:nth-child(3) {
+    display: none !important;
+  }
+
+  .hero-background-img {
+    height: 125vh;
+  }
+}
+@media (max-width: 575.98px) {
+  h1 {
+    line-height: 30px;
+    font-size: 32px;
+  }
+  h2 {
+    line-height: 32px;
+    font-size: 26px;
+    font-family: "Days One", sans-serif;
+  }
+  .buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+  .buttons a button {
+    width: 100%;
+    padding: 10px !important;
+  }
+  .hero-stretch {
+    padding: 0 !important;
+    margin-top: 100px !important;
+    width: 100%;
+  }
+  .hero-img-d {
+    width: 100%;
+    box-sizing: content-box;
+  }
+  .hero-background-img {
+    height: 115vh;
+  }
+
+  .footer-a {
+    width: 100%;
+  }
+}

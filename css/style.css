@@ -1,0 +1,725 @@
+body {
+  font-family: "Chakra Petch", sans-serif;
+  overflow-x: hidden;
+}
+h1 {
+  font-family: "Days One", sans-serif;
+  font-size: 60px;
+  color: rgb(241, 241, 241);
+}
+h2 {
+  font-family: "Days One", sans-serif;
+  color: rgb(241, 241, 241);
+  font-size: 48px;
+  line-height: 48px;
+  font-weight: 700;
+}
+h3 {
+  color: rgb(241, 241, 241);
+  font-size: 48px;
+  line-height: 48px;
+  font-weight: 700;
+}
+nav {
+  background-color: #0b0e13;
+}
+.nav-name {
+  color: rgb(203, 254, 28);
+}
+.nav-text-right ul li a {
+  color: rgb(241, 241, 241);
+}
+main {
+  background-color: #0b0e13;
+}
+a {
+  text-decoration: none;
+}
+
+.text-lime {
+  color: rgb(204, 255, 0) !important;
+}
+
+.btn-lime {
+  background-color: #c5f61b;
+  color: rgb(11, 14, 19);
+  transition: all 0.3s;
+
+  overflow: hidden; /* Keeps the effect inside the button */
+  z-index: 1;
+}
+
+/* 2. The backdrop-filter Layer (Hidden by default) */
+.btn-lime::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%; /* Start completely outside to the left */
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #0000, #fff6, #0000);
+
+  transition: left 0.3s linear;
+}
+
+.btn-lime:hover::before {
+  left: 100%;
+}
+.btn-lime:hover {
+  background-color: #a4ce1a;
+}
+.btn-outline-lime {
+  background-color: transparent;
+  color: #cbfe1c;
+  overflow: hidden;
+  border: 2px solid #cbfe1c;
+  transition: all 0.2s;
+}
+.btn-outline-lime:hover {
+  background-color: #cbfe1c;
+  color: black;
+}
+.btn-outline-lime::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%; /* Start completely outside to the left */
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #0000, #fff6, #0000);
+
+  transition: left 0.3s linear;
+}
+.btn-outline-lime:hover::before {
+  left: 100%;
+}
+/* --- Navbar --- */
+.navbar {
+  background-color: rgba(11, 12, 16, 0.95);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav-link {
+  color: white;
+  transition: 0.3s;
+}
+.nav-link:hover {
+  color: rgb(203, 254, 28) !important;
+}
+.nav-link.a {
+  color: rgb(203, 254, 28);
+}
+
+.nav-i-a i {
+  color: white;
+  transition: all 0.2s;
+}
+.nav-i-a:hover i {
+  color: #b0dc1b !important;
+}
+.nav-i-a .nav-icons-left-text {
+  color: white;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 400;
+  transition: color 0.2s;
+}
+.nav-i-a:hover .nav-icons-left-text {
+  color: #b0dc1b !important;
+}
+.nav-icons-left-text {
+  display: none;
+}
+/* --- Hero Section --- */
+.hero-title {
+  margin-bottom: 20px;
+}
+.hero-desc {
+  color: oklch(0.872 0.01 258.338);
+
+  max-width: 500px;
+  line-height: 26px;
+}
+.hero-img-d {
+  position: relative;
+}
+
+.hero-img {
+  border: 5px solid #9ff44c;
+  height: 370px;
+  object-fit: cover;
+}
+.active-players-badge {
+  left: -20px;
+  bottom: -20px;
+  background-color: #0b0e13;
+  border: 1px solid #364153;
+}
+.hero-background-img {
+  opacity: 10%;
+}
+
+.hero-img-txt p {
+  color: oklch(0.707 0.022 261.325);
+  font-size: 12px;
+  line-height: 16px;
+}
+.hero-img-txt span {
+  color: rgb(241, 241, 241);
+  line-height: 28px;
+}
+/* --- Section Headers --- */
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-subtitle {
+  color: rgb(203, 254, 28);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+.section-subtitle::before,
+.section-subtitle::after {
+  content: "";
+  height: 2px;
+  width: 80px;
+
+  background-color: #cbfe1c;
+}
+
+.section-subtitle::before {
+  margin-right: 20px;
+  background: linear-gradient(90deg, transparent, #cbfe1c);
+}
+
+.section-subtitle::after {
+  margin-left: 20px;
+  background: linear-gradient(90deg, #cbfe1c, transparent);
+}
+.section-title {
+  font-size: 48px;
+}
+/* --- Games Carousel --- */
+
+/* Game Card Styling */
+
+.game-card {
+  border-radius: 25px;
+}
+.game-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+/* Hover Overlay */
+.game-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(150, 255, 0, 0.9) 0%,
+    rgba(146, 214, 52, 0.2) 30%,
+    transparent 100%
+  );
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  justify-content: space-between;
+  box-sizing: border-box;
+  border: 3px solid #cbfe1c;
+  border-radius: 25px;
+}
+.game-card:hover .game-overlay {
+  opacity: 1;
+}
+.game-card:hover .game-img {
+  transform: scale(1.05);
+}
+
+/* Tags */
+
+.tag {
+  color: rgb(241, 241, 241);
+  backdrop-filter: brightness(0.5) !important;
+  line-height: 16px;
+  font-size: 12px;
+}
+
+/* Title */
+.game-title {
+  color: rgb(11, 14, 19);
+
+  font-size: 18px;
+  line-height: 28px;
+}
+
+/* Custom Navigation Buttons */
+.custom-btn {
+  width: 55px;
+  height: 55px;
+  border: 2px solid #444;
+  background-color: transparent;
+  color: #fff;
+
+  transition: all 0.3s ease;
+}
+
+/* Define the initial icon color here instead of inline */
+.custom-btn .fa-solid {
+  color: #99a1af;
+  transition: color 0.3s ease;
+}
+
+.custom-btn:hover {
+  border-color: #cbfe1c;
+  background-color: rgba(163, 255, 0, 0.1);
+}
+
+/* Hover state for the icon */
+.custom-btn:hover .fa-solid {
+  color: #cbfe1c;
+}
+.view-all-btn {
+  border: 2px solid #cbfe1c;
+  background-color: transparent;
+  color: #cbfe1c;
+
+  font-size: 18px;
+  line-height: 28px;
+
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.view-all-btn:hover {
+  background-color: #cbfe1c;
+  color: #000;
+}
+/* Slow down carousel transition speed */
+
+.carousel-item-start,
+.carousel-item-end {
+  transition: transform 0.2s ease !important;
+}
+
+/* --- Services / What We Do --- */
+
+/* ===== Corner Triangle Icons ===== */
+.corner-icon {
+  position: absolute;
+  color: #cbfe1c;
+
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  z-index: 2;
+}
+
+/* Top-left corner */
+.triangle-left {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-right: 30px solid #cbfe1c;
+  border-bottom: 15px solid transparent;
+
+  /* 1. Initial state: completely hidden and shifted to the left */
+  opacity: 0;
+  transform: translate(-20px, -30px) rotate(30deg);
+
+  /* 2. Define the smooth transition for both hover-in and hover-out */
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
+/* 3. Hover state: fully visible and in its final position */
+.service-card:hover .triangle-left {
+  opacity: 1;
+  transform: translate(3px, 5px) rotate(30deg);
+}
+.triangle-right {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-right: 30px solid #cbfe1c;
+  border-bottom: 15px solid transparent;
+
+  /* 1. Initial state: completely hidden and shifted to the left */
+  opacity: 0;
+  transform: translate(20px, 30px) rotate(100deg);
+
+  /* 2. Define the smooth transition for both hover-in and hover-out */
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
+/* 3. Hover state: fully visible and in its final position */
+.service-card:hover .triangle-right {
+  opacity: 1;
+  transform: translate(-10px, -20px) rotate(100deg);
+}
+
+/* Show triangles on hover */
+
+.service-card {
+  background-color: #1a1a1a;
+  text-align: center;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+.service-card-icon {
+  background-color: #1e2939;
+  transition: all 0.3s ease;
+  padding: 30px 20px;
+}
+.service-card:hover .service-card-icon {
+  background-color: #cbfe1c;
+}
+.service-card-icon i {
+  color: #cbfe1c;
+  transition: all 0.3s ease;
+}
+.service-card:hover .service-card-icon i {
+  color: #0b0e13;
+}
+.service-card:hover {
+  background: #1f2229;
+  border: 1px solid #cbfe1c;
+}
+
+.service-card h5 {
+  font-family: "Days One", sans-serif;
+  color: rgb(241, 241, 241);
+  font-size: 20px;
+  line-height: 25px;
+}
+
+.service-img-large {
+  border-radius: 15px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card-a {
+  height: 350px;
+  border-radius: 15px;
+}
+/* ============ MARQUEE WRAPPER ============ */
+.marquee-section {
+  position: relative;
+  width: 100%;
+  padding: 20px 0;
+}
+
+/* Green/yellow center glow */
+.marquee-section::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 55%;
+  height: 100%;
+  background: radial-gradient(
+    rgba(179, 231, 9, 0.422) 50%,
+    rgba(129, 190, 6, 0.731) 80%,
+    rgba(134, 225, 7, 0.594) 30%,
+    transparent
+  );
+
+  z-index: 0;
+}
+
+/* ============ TRACK ============ */
+.marquee-track {
+  display: flex;
+  gap: 18px;
+  width: max-content;
+  position: relative;
+  z-index: 1;
+}
+
+/* ============ CARD ============ */
+.card {
+  width: 100px;
+  height: 100px;
+  border-radius: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: #0d1530;
+  border: 1px solid rgba(60, 100, 180, 0.25);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ============ ANIMATIONS ============ */
+
+/* Top row — scrolls LEFT */
+.marquee-top .marquee-track {
+  animation: scrollLeft 20s linear infinite;
+}
+
+/* Bottom row — scrolls RIGHT */
+.marquee-bottom .marquee-track {
+  animation: scrollRight 20s linear infinite;
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* --- Team Section --- */
+.section-header span {
+  color: oklch(0.707 0.022 261.325);
+}
+
+.team-card {
+  height: 350px;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: #111; /* fix problem black and white oin img */
+}
+.team-img {
+  width: 250px;
+  height: 350px;
+  object-fit: cover;
+  filter: grayscale(100%);
+
+  /* Black and white by default */
+  transition: filter 0.6s ease;
+}
+
+.team-card:hover .team-img {
+  filter: grayscale(0%);
+}
+.team-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(to top, black, transparent);
+}
+.team-name {
+  line-height: 28px;
+  color: rgba(241, 241, 241, 0.857);
+  font-family: "Days One", sans-serif;
+  transition: color 0.3s ease;
+}
+.team-role {
+  color: rgba(241, 241, 241, 0.6);
+  transition: color 0.3s ease;
+  font-size: 14px;
+  line-height: 20px;
+}
+.team-wo {
+  font-weight: 400;
+  line-height: 16px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  transition: color 0.3s ease;
+  margin: 0;
+}
+
+.team-card:hover .team-name {
+  color: rgb(255, 255, 255);
+}
+
+.team-card:hover .team-role {
+  color: rgb(203, 254, 28);
+}
+
+/* Vertical Tag on the right side */
+.team-vertical-tag {
+  position: absolute;
+  right: 15px;
+  bottom: 50px;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: bold;
+  color: rgba(241, 241, 241, 0.733);
+  transform: rotate(90deg);
+  transition: color 0.3s ease;
+  z-index: 3;
+}
+
+.team-card:hover .team-vertical-tag {
+  color: rgb(203, 254, 28);
+}
+
+/* --- Contact Section --- */
+.left-column {
+  width: 45%;
+}
+.right-column {
+  background-color: #1e2939;
+  height: 900px;
+  width: 47%;
+}
+.contact-card {
+  background-color: #1e2939;
+  margin-bottom: 20px;
+}
+
+.contact-icon {
+  width: 60px;
+  height: 60px;
+  background: #cbfe1c;
+}
+.contact-left-information h5 {
+  font-family: "Days One", sans-serif;
+  color: rgb(241, 241, 241);
+  line-height: 28px;
+}
+
+.community-box {
+  background: linear-gradient(70deg, #c6fd25, #13df72);
+}
+.community-box h4 {
+  color: rgb(11, 14, 19);
+  font-family: "Days One", sans-serif;
+  line-height: 32px;
+}
+.community-box p {
+  color: rgb(11, 14, 19);
+}
+.right-column-inf > h4 {
+  color: rgb(241, 241, 241);
+  font-family: "Days One", sans-serif;
+  line-height: 32px;
+}
+.social-icon {
+  width: 50px;
+  height: 50px;
+  background: black;
+  color: white;
+  transition: 0.3s;
+}
+.social-icon:hover {
+  backdrop-filter: brightness(0.8);
+}
+.form-label.l-a {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  color: oklch(0.872 0.01 258.338);
+}
+.form-control,
+.form-select-a {
+  background: #364153;
+  border: 1px solid #333;
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+}
+.form-control:focus {
+  background-color: #364153;
+}
+.form-control:focus,
+.form-select-a:focus {
+  border: 2px solid #cbfe1c;
+  color: white;
+}
+input::placeholder {
+  color: #89909a !important;
+}
+textarea.in-a {
+  width: 100%;
+  height: 150px;
+  resize: none;
+}
+
+textarea::placeholder {
+  color: #89909a !important;
+}
+input.form-check-input:focus {
+  border: 3px solid #cbfe1c;
+}
+label.op {
+  color: oklch(0.707 0.022 261.325);
+  font-size: 14px;
+  line-height: 20px;
+}
+.right-he {
+  color: rgb(203, 254, 28);
+  line-height: 32px;
+}
+.con-bb {
+  color: oklch(0.707 0.022 261.325) !important ;
+  font-size: 14px;
+}
+/* --- Footer --- */
+footer {
+  background: black;
+  padding: 60px 0;
+}
+.footer-a p {
+  color: oklch(0.707 0.022 261.325);
+}
+.footer-explain {
+  color: rgb(241, 241, 241);
+  font-family: "Days One", sans-serif;
+}
+.footer-link {
+  color: #99a1af;
+  line-height: 24px;
+
+  transition: 0.3s;
+}
+
+.icon-bbb {
+  color: #99a1af;
+}
+.icon-bbb:hover {
+  color: #cbfe1c;
+}
+.last-footer {
+  border-top: 1px solid #1e2939;
+}
+.last-footer-a.a,
+.last-footer-a.b {
+  color: oklch(0.707 0.022 261.325);
+}
+.last-footer-a.b:hover,
+.footer-link:hover {
+  color: rgb(203, 254, 28);
+}
